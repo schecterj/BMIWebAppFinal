@@ -1,6 +1,6 @@
 ﻿'Program Name: BMI Calculator - WebSite
 'CIS 141 Project: 8
-'Date: 12/14/16
+'Date: 12/12/16
 'Author: Jonathan Schecter
 'Purpose: User enters weight, height (feet & inches). After clicking Calculate button,
 '           the program will display BMI and the BMI health status. The user can click 
@@ -15,6 +15,7 @@ Public Class _Default
     Inherits Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        'focus on the weight text
         focusOn()
     End Sub
 
@@ -24,10 +25,12 @@ Public Class _Default
     End Sub
 
     Protected Sub clearText()
+        'put into sub incase the program needs to be changed later
         txtHeightFeet.Text = Nothing
         txtHeightInches.Text = Nothing
         txtWeight.Text = Nothing
 
+        'seperate action
         hideBMILabels()
     End Sub
 
@@ -37,16 +40,18 @@ Public Class _Default
     End Sub
 
     Protected Sub focusOn()
+        'this can be changed if needed
         txtWeight.Focus()
     End Sub
 
     Protected Function preventGarbageInput(decWeight As Decimal, intHeightFeet As Integer) As Boolean
-
+        'validation for garbage input. Blank input is covered by asp validation objects
         Dim check As Boolean = True
 
         If decWeight < 20 Or decWeight > 300 Then
 
             Dim msg As String
+            'javascript to prevent server side errors
             msg = "<script language='javascript'>"
             msg += "alert('" & "Please enter valid weight" & "');"
             msg += "<" & "/script>"
