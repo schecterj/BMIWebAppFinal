@@ -121,10 +121,20 @@ Public Class _Default
         'End If
 
         If decWeight < 20 Or decWeight > 300 Then
-            MsgBox("Please enter valid weight")
+            ' MsgBox("Please enter valid weight")
             clearText()
             'check = False
+
+
+            Dim msg As String
+            msg = "<script language='javascript'>"
+            msg += "alert('" & "Please enter valid weight" & "');"
+            msg += "<" & "/script>"
+
             Exit Sub
+
+
+
         End If
 
         If ((decWeight > 0) And (decHeightInches >= 0) And (intHeightFeet > 0)) Then
