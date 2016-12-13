@@ -7,7 +7,7 @@
         <p class="lead">Enter your weight and your height below. Click calculate to see your BMI.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
         <table style="padding: 5px; width: 100%; border: 1px solid #0000FF; background-color: #F8F8F8">
             <tr>
-                <td style="width: 269px">Enter weight in pounds (lbs):</td>
+                <td style="width: 269px">Enter weight in pounds:</td>
                 <td style="width: 401px">
             <asp:TextBox ID="txtWeight" runat="server" Width="70px" Height="30px" MaxLength="4" TextMode="Number" ToolTip="Enter weight."></asp:TextBox>
                 </td>
