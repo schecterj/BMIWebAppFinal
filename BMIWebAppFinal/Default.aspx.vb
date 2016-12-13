@@ -51,8 +51,6 @@ Public Class _Default
             msg += "alert('" & "Please enter valid weight" & "');"
             msg += "<" & "/script>"
             Response.Write(msg)
-
-
             clearText()
             check = False
         End If
@@ -119,8 +117,6 @@ Public Class _Default
         End Try
 
 
-
-
         'turn user data into one height variable
         decHeightInInches = (intHeightFeet * 12) + decHeightInches
 
@@ -131,21 +127,6 @@ Public Class _Default
         If preventGarbage = False Then
             Exit Sub
         End If
-
-        'If decWeight < 20 Or decWeight > 300 Then
-        ' MsgBox("Please enter valid weight")
-        'clearText()
-        'check = False
-
-        ' Dim msg As String
-        'msg = "<script language='javascript'>"
-        'msg += "alert('" & "Please enter valid weight" & "');"
-        'msg += "<" & "/script>"
-        'Response.Write(msg)
-        'Exit Sub
-
-        'End If
-
 
 
         If ((decWeight > 0) And (decHeightInches >= 0) And (intHeightFeet > 0)) Then
