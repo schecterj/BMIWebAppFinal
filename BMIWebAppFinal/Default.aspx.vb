@@ -115,8 +115,15 @@ Public Class _Default
         ' I used the CDec because of the Option Strict. Without it there was an error thrown.
         decBMI = CDec((decWeight * cBMIConst) / (decHeightInInches ^ 2))
 
-        Dim preventGarbage As Boolean = preventGarbageInput(decWeight, intHeightFeet)
-        If preventGarbage = False Then
+        ' Dim preventGarbage As Boolean = preventGarbageInput(decWeight, intHeightFeet)
+        'If preventGarbage = False Then
+        'Exit Sub
+        'End If
+
+        If decWeight < 20 Or decWeight > 300 Then
+            MsgBox("Please enter valid weight")
+            clearText()
+            'check = False
             Exit Sub
         End If
 
