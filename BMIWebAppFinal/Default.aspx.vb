@@ -130,7 +130,7 @@ Public Class _Default
             msg = "<script language='javascript'>"
             msg += "alert('" & "Please enter valid weight" & "');"
             msg += "<" & "/script>"
-
+            Response.Write(msg)
             Exit Sub
 
 
