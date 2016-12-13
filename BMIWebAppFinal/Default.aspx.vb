@@ -45,13 +45,25 @@ Public Class _Default
         Dim check As Boolean = True
 
         If decWeight < 20 Or decWeight > 300 Then
-            MsgBox("Please enter valid weight")
+
+            Dim msg As String
+            msg = "<script language='javascript'>"
+            msg += "alert('" & "Please enter valid weight" & "');"
+            msg += "<" & "/script>"
+            Response.Write(msg)
+
+
             clearText()
             check = False
         End If
 
         If intHeightFeet < 2 Or intHeightFeet > 8 Then
-            MsgBox("Please enter valid height")
+
+            Dim msg As String
+            msg = "<script language='javascript'>"
+            msg += "alert('" & "Please enter valid height" & "');"
+            msg += "<" & "/script>"
+            Response.Write(msg)
             clearText()
             check = False
         End If
@@ -115,27 +127,26 @@ Public Class _Default
         ' I used the CDec because of the Option Strict. Without it there was an error thrown.
         decBMI = CDec((decWeight * cBMIConst) / (decHeightInInches ^ 2))
 
-        ' Dim preventGarbage As Boolean = preventGarbageInput(decWeight, intHeightFeet)
-        'If preventGarbage = False Then
+        Dim preventGarbage As Boolean = preventGarbageInput(decWeight, intHeightFeet)
+        If preventGarbage = False Then
+            Exit Sub
+        End If
+
+        'If decWeight < 20 Or decWeight > 300 Then
+        ' MsgBox("Please enter valid weight")
+        'clearText()
+        'check = False
+
+        ' Dim msg As String
+        'msg = "<script language='javascript'>"
+        'msg += "alert('" & "Please enter valid weight" & "');"
+        'msg += "<" & "/script>"
+        'Response.Write(msg)
         'Exit Sub
+
         'End If
 
-        If decWeight < 20 Or decWeight > 300 Then
-            ' MsgBox("Please enter valid weight")
-            clearText()
-            'check = False
 
-
-            Dim msg As String
-            msg = "<script language='javascript'>"
-            msg += "alert('" & "Please enter valid weight" & "');"
-            msg += "<" & "/script>"
-            Response.Write(msg)
-            Exit Sub
-
-
-
-        End If
 
         If ((decWeight > 0) And (decHeightInches >= 0) And (intHeightFeet > 0)) Then
 
